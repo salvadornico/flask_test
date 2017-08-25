@@ -1,0 +1,36 @@
+- extends 'layout.pug'
+
+- block body
+
+h1 Dashboard
+h3 Hi {{ session.name }}
+
+.section
+	a.btn(href="/add_article") Add article
+
+.section
+	table.striped
+		thead
+			tr
+				th ID
+				th Title
+				th Author
+				th Date
+				th
+				th
+		tbody
+			for article in articles
+				tr
+					td {{article.id}}				
+					td
+						a(href="articles/{{article.id}}") {{article.title}}				
+					td {{article.author}}				
+					td {{article.create_date}}				
+					td
+						a.btn.right(href="edit_article/{{article.id}}")	Edit			
+					td
+						form(method="POST" action="{{ url_for('delete_article') }}")
+							input(value="{{ article.id }}", name="id", type="hidden")
+							button.btn(type="submit") Delete
+
+- endblock

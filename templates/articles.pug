@@ -1,0 +1,11 @@
+- extends 'layout.pug'
+
+- block body
+
+h1 Articles
+ul.collection
+	for article in articles
+		li.collection-item
+			a(href="articles/{{article.id}}") {{article.title}}
+
+- endblock

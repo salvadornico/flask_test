@@ -1,0 +1,16 @@
+- extends 'layout.pug'
+
+- block body
+
+h1 Login
+
+form(method="POST")
+	.input-field
+		label Username
+		input(type="text" name="username")
+	.input-field
+		label Password
+		input(type="password" name="password")
+	button.btn(type="submit" value="Submit") Login
+
+- endblock

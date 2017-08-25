@@ -1,0 +1,20 @@
+nav
+	.nav-wrapper
+		a.brand-logo(href="/") My Flask App
+		ul.right
+			li
+				a(href="/") Home
+			li
+				a(href="/about") About
+			li
+				a(href="/articles") Articles
+			if session.logged_in
+				li
+					a(href="/dashboard") Dashboard
+				li
+					a(href="/logout") Logout
+			else
+				li
+					a(href="/login") Login
+				li
+					a(href="/register") Register

@@ -1,0 +1,8 @@
+- macro render_field(field)
+.input-field
+	{{ field.label }}
+	{{ field(**kwargs)|safe }}
+	if field.errors
+		for error in field.errors
+			span.red-text {{ error }}
+- endmacro

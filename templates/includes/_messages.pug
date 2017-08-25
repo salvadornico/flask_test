@@ -1,0 +1,5 @@
+- with messages = get_flashed_messages()
+if messages
+	for message in messages
+		script Materialize.toast('{{ message }}', 4000)
+- endwith

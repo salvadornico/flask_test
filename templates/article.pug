@@ -1,0 +1,10 @@
+- extends 'layout.pug'
+
+- block body
+
+h1 {{ article.title }}
+span Written by {{ article.author }} on {{ article.create_date }}
+hr
+div(style="white-space: pre-wrap") {{ article.body | safe}}
+
+- endblock

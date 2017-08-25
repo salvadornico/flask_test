@@ -1,0 +1,17 @@
+- extends 'layout.pug'
+
+- block body
+
+h1 Edit article
+- from "includes/_formhelpers.pug" import render_field
+form(method="POST")
+	{{ render_field(form.title) }}
+	{{ render_field(form.body, class="materialize-textarea") }}
+	button.btn(type="submit" value="Submit") Save
+
+script.
+	$(document).ready(function() {
+		$('.materialize-textarea').trigger('autoresize')
+	})
+
+- endblock

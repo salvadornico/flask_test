@@ -1,0 +1,16 @@
+- extends 'layout.pug'
+
+- block body
+
+h1 Register
+
+- from "includes/_formhelpers.pug" import render_field
+form(method="POST")
+	{{ render_field(form.name) }}
+	{{ render_field(form.email) }}
+	{{ render_field(form.username) }}
+	{{ render_field(form.password) }}
+	{{ render_field(form.confirm) }}
+	button.btn(type="submit" value="Submit") Submit
+
+- endblock
